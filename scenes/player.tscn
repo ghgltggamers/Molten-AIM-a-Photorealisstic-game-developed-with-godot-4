@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bql6lfesff2hp"]
+
+[ext_resource type="Script" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_8ount"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_unwv7"]
+[ext_resource type="Texture2D" uid="uid://2l17p0ws4e2e" path="res://assets/aim.png" id="3_63hdq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cqh3w"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xtpe2"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.295273, 0)
+script = ExtResource("1_8ount")
+KEY_BIND_UP = "up"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "down"
+
+[node name="Head" parent="." instance=ExtResource("2_unwv7")]
+
+[node name="aim" type="Sprite3D" parent="Head"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, -0.750388)
+texture = ExtResource("3_63hdq")
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/aim"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -2000, 0)
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_cqh3w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_xtpe2")
+
+[editable path="Head"]

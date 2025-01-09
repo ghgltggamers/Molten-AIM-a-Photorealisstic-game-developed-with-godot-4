@@ -1,0 +1,180 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7o0vq8tbh70k"]
+
+[ext_resource type="PackedScene" uid="uid://dhv43ng6b07gb" path="res://addons/GtgAssetsKit GD4 - Photorealism/usable/wooden_surface.tscn" id="1_3kd3c"]
+[ext_resource type="PackedScene" uid="uid://cgpkmn4fl6r8d" path="res://addons/GtgAssetsKit GD4 - Photorealism/usable/house_wall.tscn" id="2_ydrmc"]
+[ext_resource type="PackedScene" uid="uid://co25e3kemjtuu" path="res://addons/GtgAssetsKit GD4 - Photorealism/usable/objects/modern_stand.tscn" id="3_bs37t"]
+[ext_resource type="PackedScene" uid="uid://banf0n06dko0v" path="res://addons/GtgAssetsKit GD4 - Photorealism/usable/objects/tv.tscn" id="4_8hrny"]
+[ext_resource type="PackedScene" uid="uid://csyg02dny675v" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/chinese_tea_table_1k.gltf/chinese_tea_table_1k.gltf" id="5_h6fo1"]
+[ext_resource type="PackedScene" uid="uid://dgxehwbd32f7c" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/didelta_spinosa_1k.gltf/didelta_spinosa_1k.gltf" id="6_myyx7"]
+[ext_resource type="PackedScene" uid="uid://qr0vydwcx0gb" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/flowered grassings/leipoldtia_schultzei_1k.gltf" id="7_avwqg"]
+[ext_resource type="PackedScene" uid="uid://hvikpahvllyg" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/gallinera_table_1k.gltf/gallinera_table_1k.gltf" id="8_bhuap"]
+[ext_resource type="PackedScene" uid="uid://ddfaalwvjuaga" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/metal_tool_chest_1k.gltf/metal_tool_chest_1k.gltf" id="9_lndph"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_drv5n"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_wvgb0"]
+sky_material = SubResource("ProceduralSkyMaterial_drv5n")
+
+[sub_resource type="Environment" id="Environment_27lor"]
+background_mode = 2
+sky = SubResource("Sky_wvgb0")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 5.38
+ssao_intensity = 3.2
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="Demo 3D Scene Photorealism" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_27lor")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, -0.125385, 0.672098, 0.729769, -0.484027, 0.600651, -0.636346, 0, 0, 0)
+light_energy = 10.55
+shadow_enabled = true
+
+[node name="floor" type="Node3D" parent="."]
+
+[node name="Wooden Surface" parent="floor" instance=ExtResource("1_3kd3c")]
+
+[node name="Wooden Surface3" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Wooden Surface2" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Wooden Surface7" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Wooden Surface8" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="Wooden Surface9" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="Wooden Surface4" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Wooden Surface5" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="Wooden Surface6" parent="floor" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="floor2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="Wooden Surface" parent="floor2" instance=ExtResource("1_3kd3c")]
+
+[node name="Wooden Surface3" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Wooden Surface2" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Wooden Surface7" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="Wooden Surface8" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="Wooden Surface9" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="Wooden Surface4" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="Wooden Surface5" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="Wooden Surface6" parent="floor2" instance=ExtResource("1_3kd3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="wall behind" type="Node3D" parent="."]
+
+[node name="house wall" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 0.0663928, 7.40762)
+
+[node name="house wall2" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 0.0663928, 7.40762)
+
+[node name="house wall3" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 0.0663928, 7.40762)
+
+[node name="house wall4" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 3.06639, 7.40762)
+
+[node name="house wall5" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 3.06639, 7.40762)
+
+[node name="house wall6" parent="wall behind" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 3.06639, 7.40762)
+
+[node name="wall behind3" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.108791, 0, -0.0983653)
+
+[node name="house wall" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 0.0663928, 7.40762)
+
+[node name="house wall2" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 0.0663928, 7.40762)
+
+[node name="house wall3" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 0.0663928, 7.40762)
+
+[node name="house wall4" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 3.06639, 7.40762)
+
+[node name="house wall5" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 3.06639, 7.40762)
+
+[node name="house wall6" parent="wall behind3" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 3.06639, 7.40762)
+
+[node name="wall behind4" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.8912, 0, -0.0983644)
+
+[node name="house wall" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 0.0663928, 7.40762)
+
+[node name="house wall2" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 0.0663928, 7.40762)
+
+[node name="house wall3" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 0.0663928, 7.40762)
+
+[node name="house wall4" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96115, 3.06639, 7.40762)
+
+[node name="house wall5" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388517, 3.06639, 7.40762)
+
+[node name="house wall6" parent="wall behind4" instance=ExtResource("2_ydrmc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.03885, 3.06639, 7.40762)
+
+[node name="modern stand" parent="." instance=ExtResource("3_bs37t")]
+transform = Transform3D(-8.27899e-08, 0, -1.70013, 0, 1, 0, 1.89401, 0, -7.43148e-08, 7.02781, 0.878361, 0.405128)
+
+[node name="TV" parent="." instance=ExtResource("4_8hrny")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.97054, 2.19701, 0.269024)
+
+[node name="chinese_tea_table_1k" parent="." instance=ExtResource("5_h6fo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91999, -1.19209e-07, 0.472036)
+
+[node name="didelta_spinosa_1k" parent="." instance=ExtResource("6_myyx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.51186, 0, -4.85005)
+
+[node name="leipoldtia_schultzei_1k" parent="." instance=ExtResource("7_avwqg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.69955, 0, -7.02613)
+
+[node name="gallinera_table_1k" parent="." instance=ExtResource("8_bhuap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.994212, 0, 1.12365)
+
+[node name="metal_tool_chest_1k" parent="." instance=ExtResource("9_lndph")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12929, 0, -2.32746)

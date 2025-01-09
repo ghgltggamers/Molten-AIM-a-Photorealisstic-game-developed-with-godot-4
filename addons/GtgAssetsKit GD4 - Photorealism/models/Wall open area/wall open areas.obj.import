@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cx4gun7u0pse6"
+path="res://.godot/imported/wall open areas.obj-0cb118d226a066ad6414090f7dc1b3ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall open areas.obj-0cb118d226a066ad6414090f7dc1b3ef.mesh"]
+
+source_file="res://addons/GtgAssetsKit GD4 - Photorealism/models/Wall open area/wall open areas.obj"
+dest_files=["res://.godot/imported/wall open areas.obj-0cb118d226a066ad6414090f7dc1b3ef.mesh", "res://.godot/imported/wall open areas.obj-0cb118d226a066ad6414090f7dc1b3ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

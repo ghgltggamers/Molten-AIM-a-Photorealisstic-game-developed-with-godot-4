@@ -1,0 +1,193 @@
+[gd_scene load_steps=23 format=3 uid="uid://cho8dk17530na"]
+
+[ext_resource type="ArrayMesh" uid="uid://cvu5h2jp37wjx" path="res://assets/desk/desk.obj" id="1_bvmc0"]
+[ext_resource type="Texture2D" uid="uid://v0o85cgfbp65" path="res://addons/GtgAssetsKit GD4 - Photorealism/materials/raw/Wood092_1K-PNG/Wood092_1K-PNG_Color.png" id="1_idn2c"]
+[ext_resource type="Texture2D" uid="uid://ci082bg0y1qvn" path="res://assets/ciyty.jpg" id="1_mjnk1"]
+[ext_resource type="Texture2D" uid="uid://cv0pe1lgjgn5j" path="res://addons/GtgAssetsKit GD4 - Photorealism/materials/raw/Wood092_1K-PNG/Wood092_1K-PNG_Displacement.png" id="2_3d22x"]
+[ext_resource type="Texture2D" uid="uid://47fqnhv2xbos" path="res://addons/GtgAssetsKit GD4 - Photorealism/materials/raw/Wood092_1K-PNG/Wood092_1K-PNG_NormalGL.png" id="3_ccr2b"]
+[ext_resource type="Texture2D" uid="uid://lyk7rhuyctcm" path="res://addons/GtgAssetsKit GD4 - Photorealism/materials/raw/Wood092_1K-PNG/Wood092_1K-PNG_Roughness.png" id="4_xq4cv"]
+[ext_resource type="Material" uid="uid://bq6rqd7pmjvff" path="res://addons/GtgAssetsKit GD4 - Photorealism/materials/wall painted.tres" id="6_gragd"]
+[ext_resource type="PackedScene" uid="uid://3hmj3rplnvic" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/alarm_clock_01_1k.gltf/alarm_clock_01_1k.gltf" id="8_x3160"]
+[ext_resource type="PackedScene" uid="uid://d1bwfcihuqxlx" path="res://addons/GtgAssetsKit GD4 - Photorealism/models/pbr haven/CashRegister_01_1k.gltf/CashRegister_01_1k.gltf" id="9_m8hvt"]
+[ext_resource type="Texture2D" uid="uid://cr0v5v4uq6ky3" path="res://assets/godot.png" id="10_7s77b"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_nasv8"]
+panorama = ExtResource("1_mjnk1")
+
+[sub_resource type="Sky" id="Sky_eu0un"]
+sky_material = SubResource("PanoramaSkyMaterial_nasv8")
+
+[sub_resource type="Environment" id="Environment_8boxx"]
+background_mode = 2
+sky = SubResource("Sky_eu0un")
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sws7"]
+cull_mode = 1
+albedo_texture = ExtResource("1_idn2c")
+roughness_texture = ExtResource("4_xq4cv")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("3_ccr2b")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("2_3d22x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfgv8"]
+cull_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5pyh"]
+cull_mode = 1
+albedo_texture = ExtResource("1_idn2c")
+roughness_texture = ExtResource("4_xq4cv")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("3_ccr2b")
+heightmap_enabled = true
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("2_3d22x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eu2u5"]
+transparency = 1
+blend_mode = 1
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3eom"]
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 1.0
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_drc3c"]
+albedo_texture = ExtResource("10_7s77b")
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.34
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wx1dc"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m1m56"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xnsui"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="LOBBY" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.262932, 0.262932, 0.262932, 1)
+light_energy = 2.09
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8boxx")
+
+[node name="Desk" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.23393, 1.19209e-07, -0.0278184)
+material_override = SubResource("StandardMaterial3D_8sws7")
+mesh = ExtResource("1_bvmc0")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfgv8")
+
+[node name="Desk3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.39272e-08, 0, -1, 0, 1, 0, 1.46248, 0, -4.37114e-08, 5.23393, 7, -2.34088)
+mesh = ExtResource("1_bvmc0")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfgv8")
+
+[node name="Desk4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.39272e-08, 0, -1, 0, 1, 0, 1.46248, 0, -4.37114e-08, 5.23393, -2.13646, -2.34088)
+mesh = ExtResource("1_bvmc0")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfgv8")
+
+[node name="Desk2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.23393, 5.51958, -0.0278184)
+material_override = SubResource("StandardMaterial3D_e5pyh")
+mesh = ExtResource("1_bvmc0")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfgv8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4718, 4.5, -3.96562)
+material_override = ExtResource("6_gragd")
+size = Vector3(24, 10, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.032331, 0, 0, 0, 1, 0, 0, 0, 3.24642, -5.51512, 4.5, -1.96562)
+material_override = ExtResource("6_gragd")
+size = Vector3(24, 10, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.032331, 0, 0, 0, 0.9, 0, 0, 0, 6.49283, -5.51512, 4.5, 3.03438)
+size = Vector3(24, 10, 1)
+material = SubResource("StandardMaterial3D_eu2u5")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(21.7, 0, 0, 0, 1, 0, 0, 0, 12.54, 5.02701, -2.24842, 6)
+material = SubResource("StandardMaterial3D_g3eom")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(21.7, 0, 0, 0, 1, 0, 0, 0, 12.54, 5.02701, 6.71275, 6)
+material = SubResource("StandardMaterial3D_g3eom")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(21.7, 0, 0, 0, 1, 0, 0, 0, 12.54, 5.02701, 6.71275, 6)
+material = SubResource("StandardMaterial3D_g3eom")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.34214, 0.998085, 0, -21.6585, -0.0618498, 0, 0, 0, 12.54, 15.027, 6.71275, 3.9935)
+size = Vector3(1, 1, 1.31824)
+material = SubResource("StandardMaterial3D_g3eom")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.0575668, 0.999996, 0, -21.6999, -0.00265285, 0, 0, 0, 12.54, -5.64174, 6.71275, -11.7187)
+visible = false
+size = Vector3(1, 1, 1.31824)
+material = SubResource("StandardMaterial3D_g3eom")
+
+[node name="alarm_clock_01_1k" parent="." instance=ExtResource("8_x3160")]
+transform = Transform3D(-3.05274, 0, 1.7625, 0, 3.525, 0, -1.7625, 0, -3.05274, -3.39669, 1.38872, 0.674526)
+
+[node name="CashRegister_01_1k" parent="." instance=ExtResource("9_m8hvt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05241, 1.38875, 0.782702)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(-1.08815, 0, 0, 0, 1.3, 0, 0, 0, 1, 4.39502, 2.89601, -3.88813)
+material_override = SubResource("StandardMaterial3D_drc3c")
+size = Vector3(2.23706, 2.2041, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.310303, 3.82246, -3.45634)
+size = Vector3(0.379395, 1.16895, 1)
+material = SubResource("StandardMaterial3D_wx1dc")
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.310303, 1.82246, -3.45634)
+size = Vector3(0.379395, 1.16895, 1)
+material = SubResource("StandardMaterial3D_wx1dc")
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.689697, 2.82246, -3.45634)
+size = Vector3(0.379395, 1.16895, 1)
+material = SubResource("StandardMaterial3D_wx1dc")
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.3103, 2.82246, -3.45634)
+size = Vector3(0.379395, 1.16895, 1)
+material = SubResource("StandardMaterial3D_wx1dc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 2.98023e-08, -0.4, 0, 1, 1.19209e-08, -0.30769, 2.81599, -4)
+mesh = SubResource("CylinderMesh_m1m56")
+surface_material_override/0 = SubResource("StandardMaterial3D_xnsui")
